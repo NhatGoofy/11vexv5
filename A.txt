@@ -1,2 +1,2 @@
-$ git config --global user.name "John Doe"
-$ git config --global user.email johndoe@example.com
+git commit -m"themfile A" git config --global user.name "Nhatgoofy"
+ git config --global user.email "nhathua3@gmail.com"
