@@ -1,5 +1,0 @@
-git commit -m"themfile A" git config --global user.name "Nhatgoofy"
- git config --global user.email "nhathua3@gmail.com"
-đây là nhật mà
-ủa alo wtf
-chill 
