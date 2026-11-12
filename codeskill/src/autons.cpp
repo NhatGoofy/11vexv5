@@ -557,6 +557,7 @@ void point_70(){
   wait(0.15, sec);
   motornang.spinFor(forward,1300,deg,false);   // đặt cốc lần 2
   wait(1, sec);
+  chassis.drive_to_point(20,10); /// chayj dden pin do
 
 
     
