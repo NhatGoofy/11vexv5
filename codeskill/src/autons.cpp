@@ -405,7 +405,7 @@ void point_70(){
   wait(0.1, sec);
   motorhut.spin(forward);
   wait(0.3, sec);
-  chassis.turn_to_point(-49.9,57);
+  chassis.turn_to_angle(0);
   wait(0.1, sec);
   chassis.drive_to_point(-49.4, 57);  
   motorhut.stop();
