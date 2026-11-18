@@ -399,8 +399,9 @@ void point50(){  //chassis.set_coordinates(-60.2,50.3,0);
 }
   
 void point_70(){    
-  //set point   chassis.set_coordinates(-59.4,62.2,0);
-
+  //set point   chassis.set_coordinates(-61.2,50.3,0);
+  chassis.turn_to_point(-68,55);
+  wait(0.1, sec);
   chassis.drive_to_point(-49.5,27);
   wait(0.1,sec);
   motorup.spinToPosition(150,deg);
