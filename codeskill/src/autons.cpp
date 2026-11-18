@@ -399,11 +399,16 @@ void point50(){  //chassis.set_coordinates(-60.2,50.3,0);
 }
   
 void point_70(){    
-  //set point   chassis.set_coordinates(-61.2,50.3,0);
-  chassis.turn_to_point(-68,55);
+  //set point   chassis.set_coordinates(-61.8,49,180);
   wait(0.1, sec);
-  chassis.drive_to_point(-49.5,27);
+  chassis.drive_to_point(-24,49);
   wait(0.1,sec);
+  chassis.drive_to_point(-46,47);
+  wait(0.1,sec);
+  chassis.turn_to_point(-46,65);
+  wait(0.1, sec);
+  chassis.drive_to_point(-46,27);
+  wait(0.1, sec);
   motorup.spinToPosition(150,deg);
   wait(0.1, sec);
   motorhut.spin(forward);
@@ -426,13 +431,16 @@ void point_70(){
   wait(0.1, sec);
     chassis.drive_to_point(-53.489, 55.5,2,6,6);
     wait(0.1,sec);
-    chassis.turn_to_point(-61, 66.5);
+    chassis.turn_to_point(-24, 24);
     chassis.drive_max_voltage=8;
     wait(0.1, sec);
-    chassis.drive_timeout=3000;    //set timeout
+    chassis.drive_timeout=1500;    //set timeout
     wait(0.1, sec);
-    chassis.drive_to_point(-1, 2);
+    chassis.drive_to_point(-20, 20);
     wait(0.1, sec);
+    chassis.turn_to_point(-53,55);
+    wait(0.1, sec);
+    chassis.drive_to_point(0,3);
     motornang.spinFor(forward, 450,deg,false);  // nâng xog pin 1
     
     wait(0.5, sec);
