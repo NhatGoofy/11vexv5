@@ -125,7 +125,7 @@ void pre_auton() {
     wait(100, msec);} 
   
   motorup.stop(hold);
-  chassis.set_coordinates(-61.2,50.3,0);
+  chassis.set_coordinates(-61.8,50.3,0);
   motornang.setVelocity(95, percent);
   motorhut.setVelocity(200, percent);
   motorup.setVelocity(200, percent);
