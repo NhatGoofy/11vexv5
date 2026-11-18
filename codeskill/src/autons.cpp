@@ -10,7 +10,7 @@
 
 void default_constants(){
    // Each constant set is in the form of (maxVoltage, kP, kI, kD, startI).
-  chassis.set_drive_constants(7.8, 1.1, 0, 2.5, 1.5);
+  chassis.set_drive_constants(7.9, 0.7, 0.01, 2, 0.5);
   chassis.set_heading_constants(6, .4, 0, 1, 0);
   chassis.set_turn_constants(12, .4, .03, 3, 15);
   chassis.set_swing_constants(12, .3, .001, 2, 15);
@@ -284,12 +284,9 @@ int my_event(){
 
 
 void test(){
-
-task rotationcheck(my_event);
-Rotationcheck = true;
-wait(1.5 ,sec);
-Rotationcheck = false;
-motorup.stop(hold);
+chassis.set_coordinates(0,0,0);
+wait(0.5,sec);
+chassis.drive_to_point(0,30);
 
 }
 void hienThiCamBien() {
@@ -319,7 +316,7 @@ void point50(){  //chassis.set_coordinates(-60.2,50.3,0);
 
   motorhut.spin(reverse);
   wait(0.1, sec);
-  chassis.drive_to_point(-62.9,54.5);    // chuẩn cmn r :>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+  chassis.drive_to_point(-60,58.5);    // chuẩn cmn r :>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
   wait(0.5, sec);
   motornang.spinFor(reverse,800,deg,false);   // nâng 
   wait(0.1, sec);
@@ -425,65 +422,56 @@ void point_70(){
 
   motorhut.spin(reverse);
   wait(0.1, sec);
-  chassis.drive_to_point(-62,56.5);    // chuẩn cmn r :>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-  wait(0.5, sec);
+  chassis.drive_to_point(-60,56,2,6,6);     // chuẩn cmn r :>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+  wait(0.2, sec);
   motornang.spinFor(reverse,950,deg,false);   // nâng 
   wait(0.1, sec);
     chassis.drive_to_point(-53.489, 55.5,2,6,6);
     wait(0.1,sec);
-    chassis.turn_to_point(-24, 24);
-    chassis.drive_max_voltage=8;
+    chassis.turn_to_point(-61, 66.5);
+    chassis.drive_to_point(-30, 30);
+    chassis.drive_to_point(-23,18,3,6,6);
+    chassis.turn_to_point(-10,40);
+    chassis.turn_to_point(-55,58.8);
+    chassis.drive_timeout=2000;    //set timeout
+     chassis.drive_to_point(-0,3);
+   motornang.spinFor(forward, 450,deg,false);  // nâng xog pin 1
+    wait(0.2 sec);
+    motorhut.spinFor(fwd,1000,deg,false);
+    wait(0.2, sec);
+    chassis.drive_to_point(-50, 55.5);
     wait(0.1, sec);
-    chassis.drive_timeout=1500;    //set timeout
+    chassis.turn_to_angle(90);
     wait(0.1, sec);
-    chassis.drive_to_point(-20, 20);
+    motornang.spinFor(forward, 500,deg,false);  
+    chassis.drive_timeout= 1000;
+    motorhut.spin(reverse);  // lấy pin 2 load
     wait(0.1, sec);
-    chassis.turn_to_point(-53,55);
-    wait(0.1, sec);
-    chassis.drive_to_point(0,3);
-    motornang.spinFor(forward, 450,deg,false);  // nâng xog pin 1
-    
-    wait(0.5, sec);
-    motorhut.spinToPosition(300,deg,false);
-    wait(0.3, sec);
-    chassis.drive_to_point(-50, 57.5);
-    wait(0.1, sec);
-    chassis.turn_to_point(-41, 57.5);
-    wait(0.1, sec);
-     motornang.spinFor(forward, 500,deg,false);  
-    wait(0.1, sec);
-
-    motorhut.spin(reverse);
-    wait(0.1, sec);
-    chassis.drive_to_point(-60.8,57,2,6,6);   
+    chassis.drive_to_point(-60,55.5,3,6,6);   
     wait(0.5, sec);
     motornang.spinFor(reverse, 1250, deg,false);  // nâng cốc 2
     wait(0.1, sec);
-    chassis.drive_to_point(-54, 54.5,2,6,6);
+    chassis.drive_to_point(-55, 55.5);
     wait(0.1, sec);
-    chassis.turn_to_point(-56, 64);
-    wait(0.1, sec);
+    chassis.turn_to_point(-67, 72);
+    chassis.drive_timeout= 2000;
      chassis.drive_max_voltage=8;    // đổi tốc độ 
      wait(0.1, sec);
     motorhut.stop();
-    chassis.drive_to_point(-1, 2);
+    chassis.drive_to_point(-0 ,3);
     motornang.spinFor(forward, 750, deg,false);  
     wait(0.8, sec);
     motorhut.spinToPosition(300,deg,false);
+     chassis.drive_to_point(-50, 58.8);
     wait(0.1, sec);
-     chassis.drive_to_point(-50, 57);
-    wait(0.1, sec);
-    chassis.turn_to_point(-41, 57);
-     chassis.drive_max_voltage=8;    // đổi tốc độ 
+    chassis.turn_to_angle(90);
      motornang.spinFor(forward, 500,deg,false);  
     wait(0.1, sec);
-
     motorhut.spin(reverse);
     motorup.spinToPosition(280, deg);
     wait(0.5, sec);
-    chassis.drive_to_point(-61,57,2,6,6);   
+    chassis.drive_to_point(-60,58.8,4,6,6);   
     wait(0.1, sec);
-     
     motornang.spinFor(reverse, 1700, deg,false);  // nâng cốc 3
     wait(0.1, sec);
     chassis.drive_to_point(-54, 54.5,2,6,6);

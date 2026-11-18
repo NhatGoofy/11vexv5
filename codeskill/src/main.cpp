@@ -125,7 +125,7 @@ void pre_auton() {
     wait(100, msec);} 
   
   motorup.stop(hold);
-  chassis.set_coordinates(-61.8,49,270);
+  chassis.set_coordinates(-63,48,270);
   motornang.setVelocity(95, percent);
   motorhut.setVelocity(200, percent);
   motorup.setVelocity(200, percent);
@@ -212,7 +212,7 @@ void usercontrol(void) {
   while (1) {
     
       if (Controller1.ButtonX.pressing()){
-        point50();
+        test();
       }
       if (Controller1.ButtonY.pressing()){
         point_70();
