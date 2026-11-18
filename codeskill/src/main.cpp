@@ -125,7 +125,7 @@ void pre_auton() {
     wait(100, msec);} 
   
   motorup.stop(hold);
-  chassis.set_coordinates(-59.4,62.2,0);
+  chassis.set_coordinates(-61.2,50.3,0);
   motornang.setVelocity(95, percent);
   motorhut.setVelocity(200, percent);
   motorup.setVelocity(200, percent);
@@ -137,20 +137,27 @@ void pre_auton() {
 
   while(!auto_started){
 
-  while(1){
+  while (!auto_started) {
     double goc = rotation15.position(deg);
-    double casecade = motornang.position(deg);
+    double cascade = motornang.position(deg);
+
     Brain.Screen.clearScreen();
-    Brain.Screen.printAt(1,20, "X: %f", chassis.get_X_position());
-    Brain.Screen.printAt(1,40, "Y: %f", chassis.get_Y_position());
-    Brain.Screen.printAt(1,60, "Heading: %f", chassis.get_absolute_heading());
-    Brain.Screen.printAt(1,80, "ForwardTracker: %f", chassis.get_ForwardTracker_position());
-    Brain.Screen.printAt(1,100, "SidewaysTracker: %f", chassis.get_SidewaysTracker_position());
-    Brain.Screen.printAt(1,120,"Goc Rotation: %.2f deg", goc);
-    Brain.Screen.printAt(1,140,"Goc casecade: %.2f deg", casecade);
-    
-  }
-    task::sleep(10);
+
+    Brain.Screen.printAt(1, 20, "X: %.2f",
+                         chassis.get_X_position());
+
+    Brain.Screen.printAt(1, 40, "Y: %.2f",
+                         chassis.get_Y_position());
+
+    Brain.Screen.printAt(1, 60, "Heading: %.2f",
+                         chassis.get_absolute_heading());
+
+    Brain.Screen.printAt(1, 80, "Rotation: %.2f", goc);
+
+    Brain.Screen.printAt(1, 100, "Cascade: %.2f", cascade);
+
+    wait(50, msec);
+}
   }
 }
 
@@ -205,7 +212,7 @@ void usercontrol(void) {
   while (1) {
     
       if (Controller1.ButtonX.pressing()){
-        test();
+        point50();
       }
       if (Controller1.ButtonY.pressing()){
         point_70();

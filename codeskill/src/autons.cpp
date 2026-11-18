@@ -304,9 +304,9 @@ void hienThiCamBien() {
         wait(50, msec);
     }
 }
-void point50(){  //chassic.set_coordiate(-59.4,63.2);
+void point50(){  //chassis.set_coordinates(-60.2,50.3,0);
  
- chassis.drive_to_point(-50,27.8);
+ chassis.drive_to_point(-49,29.2);
   wait(0.1,sec);
   motorup.spinToPosition(150,deg); 
   wait(0.3, sec);
@@ -314,7 +314,7 @@ void point50(){  //chassic.set_coordiate(-59.4,63.2);
   wait(0.1, sec);
   motorup.spinToPosition(283,deg,false);
   wait(0.1, sec);
-  chassis.turn_to_point(62.21,57.6);
+  chassis.turn_to_angle(90);
   wait(0.1, sec);
 
   motorhut.spin(reverse);
@@ -398,7 +398,9 @@ void point50(){  //chassic.set_coordiate(-59.4,63.2);
     wait(1, sec);
 }
   
-void point_70(){
+void point_70(){    
+  //set point   chassis.set_coordinates(-59.4,62.2,0);
+
   chassis.drive_to_point(-49.5,27);
   wait(0.1,sec);
   motorup.spinToPosition(150,deg);
@@ -559,11 +561,23 @@ void point_70(){
   wait(0.15, sec);
   motornang.spinFor(forward,1300,deg,false);   // đặt cốc lần 2
   wait(1, sec);
-  chassis.drive_to_point(20,10); /// chayj dden pin do
+  
 
 
     
 }
+
+
+
+
+
+
+
+
+
+
+
+
 void testcasecade(){
   
     while (true) {
