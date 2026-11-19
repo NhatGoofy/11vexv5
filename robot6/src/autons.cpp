@@ -407,6 +407,7 @@ void point50(){  //chassis.set_coordinates(-60.2,50.3,0);
     // thực hiện code nâng xuống
     wait(1, sec);
 }
+
   
 void point_70(){    
  
