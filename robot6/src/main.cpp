@@ -125,6 +125,7 @@ void pre_auton() {
     wait(100, msec);} 
   chassis.set_coordinates(0,0,0);
   khop.setVelocity(100,percent);
+  khop.setPosition(0,deg);
   motornang.setVelocity(100,percent);
   toggle2.setVelocity(100, percent);
   toggle2.setPosition(0,deg);
@@ -137,6 +138,7 @@ void pre_auton() {
 
   while (!auto_started) {
     double cascade = motornang.position(deg);
+    double goc = khop.position(deg);
 
     Brain.Screen.clearScreen();
 
@@ -150,6 +152,7 @@ void pre_auton() {
                          chassis.get_absolute_heading());
 
     Brain.Screen.printAt(1, 80, "Cascade: %.2f", cascade);
+    Brain.Screen.printAt(1,100, "Khớp: %.2f",goc);
 
     wait(50, msec);
 }
@@ -218,21 +221,30 @@ void usercontrol(void) {
     else if (Controller1.ButtonR1.pressing()) {
       motornang.spin(reverse);
     }
+    else {
+     motornang.stop(brake);
+    }
     if (Controller1.ButtonA.pressing()){
       toggle2.spin(reverse);
     }
+    else {
+     toggle2.stop();
+    }
     if (Controller1.ButtonL2.pressing()){
-      gap.set(false);
+      gap.set(true);
     }
     else if (Controller1.ButtonB.pressing()){
-      gap.set(true);
+      gap.set(false);
     
     }
     if (Controller1.ButtonUp.pressing()){
-      khop.spin(reverse);
+      khop.spinToPosition(600, deg);
     }
     else if (Controller1.ButtonDown.pressing()){
-      khop.spin(fwd);
+      khop.spinToPosition(-30,deg);
+    }
+    else{
+      khop.stop(hold);
     }
     
     // This is the main execution loop for the user control program.

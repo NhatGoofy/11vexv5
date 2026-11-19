@@ -8,27 +8,27 @@ using code = vision::code;
 brain  Brain;
 
 // VEXcode device constructors
-motor leftMotorA = motor(PORT1, ratio6_1, true);
-motor leftMotorB = motor(PORT2, ratio6_1, true);
+motor leftMotorA = motor(PORT4, ratio6_1, true);
+motor leftMotorB = motor(PORT5, ratio6_1, true);
+motor leftMotorC = motor(PORT6,ratio6_1,true);
 
-motor_group LeftDriveSmart = motor_group(leftMotorA, leftMotorB);  // banh ben trai
+motor_group LeftDriveSmart = motor_group(leftMotorA, leftMotorB,leftMotorC);  // banh ben trai
 
 
-motor rightMotorA = motor(PORT3, ratio6_1, false);
-motor rightMotorB = motor(PORT4, ratio6_1, false);
+motor rightMotorA = motor(PORT1, ratio6_1, false);
+motor rightMotorB = motor(PORT2, ratio6_1, false);
+motor rightMotorC = motor(PORT3, ratio6_1, false);
 
-motor_group RightDriveSmart = motor_group(rightMotorA, rightMotorB); // banh ben phai
+motor_group RightDriveSmart = motor_group(rightMotorA, rightMotorB,rightMotorC); // banh ben phai
 
 
 rotation fwdtrack= rotation(PORT18,false);       // tracking toa do
 
 
-motor motornangT = motor(PORT5,false);
-motor motornangP = motor(PORT6,true);
-motor motornangT1=motor(PORT13,false);
-motor motornangP1=motor(PORT7,true);
-motor_group motornang = motor_group(motornangP,motornangT,motornangT1,motornangP1); // motor len xuong
-digital_out gap = digital_out(Brain.ThreeWirePort.A);
+motor motornangT = motor(PORT8,false);
+motor motornangP = motor(PORT9,true);
+motor_group motornang = motor_group(motornangP,motornangT); // motor len xuong
+digital_out gap = digital_out(Brain.ThreeWirePort.B);
 motor khop = motor(PORT10,false);
 motor toggle2 = motor(PORT11,true);
 bool RemoteControlcodeEnabled = true;

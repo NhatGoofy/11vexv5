@@ -307,6 +307,7 @@ void hienThiCamBien() {
         Brain.Screen.clearScreen();
 
         double goc = rotation15.position(deg);
+        
 
         Brain.Screen.setCursor(1, 1);
         Brain.Screen.print("Goc Rotation: %.2f deg", goc);
