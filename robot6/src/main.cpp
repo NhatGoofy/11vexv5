@@ -2,7 +2,8 @@
 
 using namespace vex;
 competition Competition;
-
+// chiều dài robot : 45 cm
+// chiều rộng robot : 41 cm
 /*---------------------------------------------------------------------------*/
 /*                             VEXcode Config                                */
 /*                                                                           */
@@ -50,7 +51,7 @@ motor_group(leftMotorA, leftMotorB),
 motor_group(rightMotorA, rightMotorB),
 
 //Specify the PORT NUMBER of your inertial sensor, in PORT format (i.e. "PORT1", not simply "1"):
-PORT11,
+PORT13,
 
 //Input your wheel diameter. (4" omnis are actually closer to 4.125"):
 3.25,
@@ -84,7 +85,7 @@ PORT11,
 //If you are using position tracking, this is the Forward Tracker port (the tracker which runs parallel to the direction of the chassis).
 //If this is a rotation sensor, enter it in "PORT1" format, inputting the port below.
 //If this is an encoder, enter the port as an integer. Triport A will be a "1", Triport B will be a "2", etc.
-PORT18,
+PORT12,
 
 //Input the Forward Tracker diameter (reverse it to make the direction switch):
 2,
@@ -170,7 +171,7 @@ void autonomous(void) {
   auto_started = true;
   switch(current_auton_selection){ 
     case 0:
-    point_70();
+   
       break;
     case 1:         
             break;
@@ -213,7 +214,7 @@ void usercontrol(void) {
         test();
       }
       if (Controller1.ButtonY.pressing()){
-        point_70();
+        test_turn();
     }
     if (Controller1.ButtonR2.pressing()) {
       motornang.spin(forward);

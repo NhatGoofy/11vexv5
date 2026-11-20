@@ -22,7 +22,7 @@ motor rightMotorC = motor(PORT3, ratio6_1, false);
 motor_group RightDriveSmart = motor_group(rightMotorA, rightMotorB,rightMotorC); // banh ben phai
 
 
-rotation fwdtrack= rotation(PORT18,false);       // tracking toa do
+rotation fwdtrack= rotation(PORT12);       // tracking toa do
 
 
 motor motornangT = motor(PORT8,false);
@@ -36,7 +36,7 @@ bool RemoteControlcodeEnabled = true;
 
 drivetrain Drivetrain = drivetrain(LeftDriveSmart, RightDriveSmart, 319.19, 295, 40, mm, 1);
 controller Controller1 = controller(primary);
-inertial Inertial11 = inertial(PORT11);
+inertial Inertial11 = inertial(PORT13);
 
 // VEXcode generated functions
 // define variable for remote controller enable/disable
