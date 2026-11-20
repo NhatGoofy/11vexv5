@@ -22,7 +22,7 @@ motor rightMotorC = motor(PORT3, ratio6_1, false);
 motor_group RightDriveSmart = motor_group(rightMotorA, rightMotorB,rightMotorC); // banh ben phai
 
 
-rotation fwdtrack= rotation(PORT18,false);       // tracking toa do
+rotation fwdtrack= rotation(PORT12,false);       // tracking toa do
 
 
 motor motornangT = motor(PORT8,false);

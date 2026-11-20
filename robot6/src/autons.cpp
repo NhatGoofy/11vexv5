@@ -10,14 +10,14 @@
 
 void default_constants(){
    // Each constant set is in the form of (maxVoltage, kP, kI, kD, startI).
-  chassis.set_drive_constants(7.9, 0.7, 0.01, 2, 0.5);
-  chassis.set_heading_constants(6, .4, 0, 1, 0);
-  chassis.set_turn_constants(12, .4, .03, 3, 15);
+  chassis.set_drive_constants(7, 0.5, 0, 2.9, 0.5);
+  chassis.set_heading_constants(6, .8, 0, 1, 0);
+  chassis.set_turn_constants(12, .3, .03, 3, 15);
   chassis.set_swing_constants(12, .3, .001, 2, 15);
 
   // Each exit condition set is in the form of (settle_error, settle_time, timeout).
-  chassis.set_drive_exit_conditions(1.5, 300, 1500);
-  chassis.set_turn_exit_conditions(1, 300, 1000);
+  chassis.set_drive_exit_conditions(1.5, 300, 1600);
+  chassis.set_turn_exit_conditions(1, 300, 2000);
   chassis.set_swing_exit_conditions(1, 300, 3000);
 }
 
@@ -410,7 +410,36 @@ void point50(){  //chassis.set_coordinates(-60.2,50.3,0);
 }
 
   
-void point_70(){    
+void point_70(){
+ odom_constants();
+ toggle2.spinFor(reverse,60,deg);
+ wait(0.1, sec);
+ chassis.drive_to_point(-47,0);
+ wait(0.1, sec);
+ chassis.turn_to_point(-47,10);
+ wait(0.1, sec);
+ motornang.spinFor(reverse,400,deg,false);
+ chassis.drive_to_point(-47, -17.7);
+ motornang.spinFor(fwd,200,deg);
+ wait(0.1, sec);
+ gap.set(false);
+ wait(0.1, sec);
+ chassis.turn_to_point(-47,0);
+ wait(0.1, sec);
+ chassis.drive_to_point(-47,0);
+ wait(0.1, sec);
+ motornang.spinFor(fwd,200,deg,false);
+ chassis.turn_to_point(-70,23);
+ wait(0.1, sec);
+ chassis.drive_to_point(-26, -18);
+ wait(0.1, sec);
+ gap.set(true);
+ wait(0.1, sec);
+ motornang.spinFor(reverse,1000,deg);
+ chassis.turn_to_point(0,-19);
+ wait(0.1, sec);
+ chassis.drive_to_point(-47, 23);
+
  
 
     

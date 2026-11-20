@@ -123,7 +123,7 @@ void pre_auton() {
   Inertial11.calibrate();
     while (Inertial11.isCalibrating()) {
     wait(100, msec);} 
-  chassis.set_coordinates(0,0,0);
+  chassis.set_coordinates(-61.5,0,270);
   khop.setVelocity(100,percent);
   khop.setPosition(0,deg);
   motornang.setVelocity(100,percent);
@@ -170,7 +170,7 @@ void autonomous(void) {
   auto_started = true;
   switch(current_auton_selection){ 
     case 0:
-    point_70();
+     point_70();
       break;
     case 1:         
             break;
