@@ -124,7 +124,7 @@ void pre_auton() {
   Inertial11.calibrate();
     while (Inertial11.isCalibrating()) {
     wait(100, msec);} 
-  chassis.set_coordinates(0,0,0);
+  chassis.set_coordinates(-6.15,0,90);
   khop.setVelocity(100,percent);
   khop.setPosition(0,deg);
   motornang.setVelocity(100,percent);
@@ -214,7 +214,7 @@ void usercontrol(void) {
         test();
       }
       if (Controller1.ButtonY.pressing()){
-        test_turn();
+        point_70();
     }
     if (Controller1.ButtonR2.pressing()) {
       motornang.spin(forward);

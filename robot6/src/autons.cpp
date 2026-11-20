@@ -315,7 +315,7 @@ void hienThiCamBien() {
         wait(50, msec);
     }
 }
-void point50(){  //chassis.set_coordinates(-60.2,50.3,0);
+void point50(){ 
  
  chassis.drive_to_point(-49,29.2);
   wait(0.1,sec);
@@ -409,23 +409,16 @@ void point50(){  //chassis.set_coordinates(-60.2,50.3,0);
     wait(1, sec);
 }
 
+void point_70(){
+   toggle2.spinFor(reverse,400,deg,false);
+  khop.spinToPosition(-30, deg,false);
+  gap.set(true);
+  wait(0.5, sec);
+  motornang.spinToPosition(-300, deg,false);
+  wait(0.1, sec);
+  chassis.drive_to_point(-50.5,18.7);
   
-void test_turn() {
-   chassis.set_coordinates(0,0,0);
-    wait(1, sec);
-
-    chassis.turn_to_angle(90);
-
-    wait(1, sec);
-
-    chassis.turn_to_angle(180);
-
-    wait(1, sec);
-
-    chassis.turn_to_angle(0);
 }
-
-
 
 
 
