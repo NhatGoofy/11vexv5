@@ -31,3 +31,4 @@ void point50();
 void test();
 void point_70();
 void batky();
+void test_turn();

@@ -11,8 +11,13 @@
 void default_constants(){
    // Each constant set is in the form of (maxVoltage, kP, kI, kD, startI).
   chassis.set_drive_constants(7, 0.5, 0, 2.9, 0.5);
+<<<<<<< HEAD
   chassis.set_heading_constants(6, .8, 0, 1, 0);
   chassis.set_turn_constants(12, .3, .03, 3, 15);
+=======
+  chassis.set_heading_constants(6, 0.8, 0, 1.0, 0);
+  chassis.set_turn_constants(12, 0.3, .03, 3, 15);
+>>>>>>> 60dc8a68568cf3e2d4d2fa6ee40b91b7f9f054e9
   chassis.set_swing_constants(12, .3, .001, 2, 15);
 
   // Each exit condition set is in the form of (settle_error, settle_time, timeout).
@@ -315,7 +320,7 @@ void hienThiCamBien() {
         wait(50, msec);
     }
 }
-void point50(){  //chassis.set_coordinates(-60.2,50.3,0);
+void point50(){ 
  
  chassis.drive_to_point(-49,29.2);
   wait(0.1,sec);
@@ -409,7 +414,16 @@ void point50(){  //chassis.set_coordinates(-60.2,50.3,0);
     wait(1, sec);
 }
 
+void point_70(){
+   toggle2.spinFor(reverse,400,deg,false);
+  khop.spinToPosition(-30, deg,false);
+  gap.set(true);
+  wait(0.5, sec);
+  motornang.spinToPosition(-300, deg,false);
+  wait(0.1, sec);
+  chassis.drive_to_point(-50.5,18.7);
   
+<<<<<<< HEAD
 void point_70(){
  odom_constants();
  toggle2.spinFor(reverse,60,deg);
@@ -443,10 +457,9 @@ void point_70(){
  
 
     
+=======
+>>>>>>> 60dc8a68568cf3e2d4d2fa6ee40b91b7f9f054e9
 }
-
-
-
 
 
 

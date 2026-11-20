@@ -2,7 +2,8 @@
 
 using namespace vex;
 competition Competition;
-
+// chiều dài robot : 45 cm
+// chiều rộng robot : 41 cm
 /*---------------------------------------------------------------------------*/
 /*                             VEXcode Config                                */
 /*                                                                           */
@@ -50,7 +51,7 @@ motor_group(leftMotorA, leftMotorB),
 motor_group(rightMotorA, rightMotorB),
 
 //Specify the PORT NUMBER of your inertial sensor, in PORT format (i.e. "PORT1", not simply "1"):
-PORT11,
+PORT13,
 
 //Input your wheel diameter. (4" omnis are actually closer to 4.125"):
 3.25,
@@ -84,7 +85,7 @@ PORT11,
 //If you are using position tracking, this is the Forward Tracker port (the tracker which runs parallel to the direction of the chassis).
 //If this is a rotation sensor, enter it in "PORT1" format, inputting the port below.
 //If this is an encoder, enter the port as an integer. Triport A will be a "1", Triport B will be a "2", etc.
-PORT18,
+PORT12,
 
 //Input the Forward Tracker diameter (reverse it to make the direction switch):
 2,
@@ -123,7 +124,11 @@ void pre_auton() {
   Inertial11.calibrate();
     while (Inertial11.isCalibrating()) {
     wait(100, msec);} 
+<<<<<<< HEAD
   chassis.set_coordinates(-61.5,0,270);
+=======
+  chassis.set_coordinates(-6.15,0,90);
+>>>>>>> 60dc8a68568cf3e2d4d2fa6ee40b91b7f9f054e9
   khop.setVelocity(100,percent);
   khop.setPosition(0,deg);
   motornang.setVelocity(100,percent);
@@ -170,7 +175,11 @@ void autonomous(void) {
   auto_started = true;
   switch(current_auton_selection){ 
     case 0:
+<<<<<<< HEAD
      point_70();
+=======
+   
+>>>>>>> 60dc8a68568cf3e2d4d2fa6ee40b91b7f9f054e9
       break;
     case 1:         
             break;
