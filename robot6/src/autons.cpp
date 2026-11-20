@@ -11,13 +11,11 @@
 void default_constants(){
    // Each constant set is in the form of (maxVoltage, kP, kI, kD, startI).
   chassis.set_drive_constants(7, 0.5, 0, 2.9, 0.5);
-<<<<<<< HEAD
   chassis.set_heading_constants(6, .8, 0, 1, 0);
   chassis.set_turn_constants(12, .3, .03, 3, 15);
-=======
+
   chassis.set_heading_constants(6, 0.8, 0, 1.0, 0);
   chassis.set_turn_constants(12, 0.3, .03, 3, 15);
->>>>>>> 60dc8a68568cf3e2d4d2fa6ee40b91b7f9f054e9
   chassis.set_swing_constants(12, .3, .001, 2, 15);
 
   // Each exit condition set is in the form of (settle_error, settle_time, timeout).
@@ -35,7 +33,7 @@ void default_constants(){
 void odom_constants(){
   default_constants();
   chassis.heading_max_voltage = 12;
-  chassis.drive_max_voltage = 10;
+  chassis.drive_max_voltage = 7;
   chassis.drive_settle_error = 3;
   chassis.boomerang_lead = .5;
   chassis.drive_min_voltage = 0;
@@ -414,27 +412,23 @@ void point50(){
     wait(1, sec);
 }
 
+
 void point_70(){
-   toggle2.spinFor(reverse,400,deg,false);
-  khop.spinToPosition(-30, deg,false);
-  gap.set(true);
-  wait(0.5, sec);
-  motornang.spinToPosition(-300, deg,false);
-  wait(0.1, sec);
-  chassis.drive_to_point(-50.5,18.7);
-  
-<<<<<<< HEAD
-void point_70(){
- odom_constants();
- toggle2.spinFor(reverse,60,deg);
+ gap.set(true);
  wait(0.1, sec);
- chassis.drive_to_point(-47,0);
+ khop.stop(hold);
+ toggle2.spinFor(reverse,600,deg);
  wait(0.1, sec);
- chassis.turn_to_point(-47,10);
+ motornang.spinFor(reverse,320,deg);
  wait(0.1, sec);
- motornang.spinFor(reverse,400,deg,false);
- chassis.drive_to_point(-47, -17.7);
- motornang.spinFor(fwd,200,deg);
+ chassis.drive_to_point(-46.5,0);
+ wait(0.1, sec);
+ chassis.turn_to_point(-46.5,10);
+ wait(0.1, sec);
+ 
+ chassis.drive_to_point(-47, -19.7);
+ wait(0.1, sec);
+ motornang.spinFor(fwd,220,deg);
  wait(0.1, sec);
  gap.set(false);
  wait(0.1, sec);
@@ -442,29 +436,20 @@ void point_70(){
  wait(0.1, sec);
  chassis.drive_to_point(-47,0);
  wait(0.1, sec);
- motornang.spinFor(fwd,200,deg,false);
+ motornang.spinFor(fwd,100,deg,false);
  chassis.turn_to_point(-70,23);
  wait(0.1, sec);
- chassis.drive_to_point(-26, -18);
+ chassis.drive_to_point(-33, -14);
+ wait(0.1, sec);
+ chassis.drive_to_point(-27, -20,2,3,3);
  wait(0.1, sec);
  gap.set(true);
  wait(0.1, sec);
- motornang.spinFor(reverse,1000,deg);
+ motornang.spinFor(reverse,700,deg);
  chassis.turn_to_point(0,-19);
  wait(0.1, sec);
- chassis.drive_to_point(-47, 23);
-
- 
-
-    
-=======
->>>>>>> 60dc8a68568cf3e2d4d2fa6ee40b91b7f9f054e9
+ chassis.drive_to_point(-47, -23);
+ wait(0.1, sec);
+ motornang.spinFor(fwd,400,deg);
+ gap.set(false);
 }
-
-
-
-
-
-
-
-
